@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Paper - Wallpapers</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>📱 Mobile Paper</h1>
+    <nav>
+      <a href="#nature">Nature</a>
+      <a href="#abstract">Abstract</a>
+      <a href="#anime">Anime</a>
+    </nav>
+    <div class="header-actions">
+      <button id="modeToggle">🌙</button>
+      <a href="login.html" class="admin-link">Admin</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search wallpapers by name or tag..." />
+    </div>
+    <section id="nature" class="wallpaper-section" data-category="Nature">
+      <h2>Nature</h2>
+      <div class="wallpaper-grid" id="nature-grid"></div>
+    </section>
+
+    <section id="abstract" class="wallpaper-section" data-category="Abstract">
+      <h2>Abstract</h2>
+      <div class="wallpaper-grid" id="abstract-grid"></div>
+    </section>
+
+    <section id="anime" class="wallpaper-section" data-category="Anime">
+      <h2>Anime</h2>
+      <div class="wallpaper-grid" id="anime-grid"></div>
+    </section>
+  </main>
+
+  <div id="previewModal" class="modal hidden">
+    <span id="closeModal">&times;</span>
+    <a id="downloadBtn" href="#" download>⬇️ Download</a>
+    <img id="modalImage" src="" alt="Preview" />
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mobile Paper. All rights reserved.</p>
+  </footer>
+</body>
+</html>

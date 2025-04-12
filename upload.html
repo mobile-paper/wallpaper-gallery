@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Wallpapers</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="upload-container">
+    <h2>Upload Wallpapers</h2>
+    <input type="file" id="fileInput" multiple />
+    <p>This demo just shows file names (no backend).</p>
+    <ul id="fileList"></ul>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      alert("Access denied. Please login.");
+      window.location.href = "login.html";
+    }
+    document.getElementById("fileInput").addEventListener("change", function() {
+      const list = document.getElementById("fileList");
+      list.innerHTML = "";
+      [...this.files].forEach(file => {
+        const li = document.createElement("li");
+        li.textContent = file.name;
+        list.appendChild(li);
+      });
+    });
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

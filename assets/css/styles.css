@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card-bg: #f0f0f0;
+}
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f0f0f0;
+  --card-bg: #2a2a2a;
+}
+.site-header {
+  background: var(--card-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ccc;
+  flex-wrap: wrap;
+}
+.site-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.site-header nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+#modeToggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+}
+.admin-link {
+  text-decoration: none;
+  padding: 5px 10px;
+  background: #4f46e5;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+main {
+  padding: 2rem;
+}
+.wallpaper-section {
+  margin-bottom: 3rem;
+}
+.wallpaper-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.wallpaper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.wallpaper-grid img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.wallpaper-grid img:hover {
+  transform: scale(1.03);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.hidden {
+  display: none;
+}
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+#closeModal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-top: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.modal a#downloadBtn {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 1.2rem;
+  color: white;
+  background: #4f46e5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
